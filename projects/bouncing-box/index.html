@@ -82,17 +82,15 @@
 					speed *= -1;
 				}
 
-				if (positionx < 0) {
+				if (positionX < 0) {
 					speed *=-1;
 				}
-
-				if (positionX > boardWidth) {
      // then do X, Y, and Z
-}
-
-
-
 			};
+
+		
+
+			
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -100,23 +98,22 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0
+				positionX = 0;
 
 				if (speed > 0) {
-					speed = speed + 3;
+					speed = speed + 3
 				
 				}
 				else if (speed < 0) {
-					speed = speed - 3;
+					speed = speed - 3
 				}
 				// your code to increase the points variable by 1
-				points = points + 1 
-				
+				points = points + 1;
 				changeBoxText(points);
-				speed = speed + 1;
+				
 
 			};
-		})();
+		});
 	</script>
 </body>
 </html>
