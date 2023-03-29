@@ -39,11 +39,11 @@ var background = function (window) {
             var backgroundFill = draw.rect(canvasWidth, canvasHeight = groundY, 'red');
             background.addChild(backgroundFill);
             // TODO: 3 - Add a moon and starfield
-            var moon = draw.bitmap("https://o.remove.bg/downloads/b53518e8-3134-42f8-ac3b-862f5c8b4d31/korn-removebg-preview.png");
+            var moon = draw.bitmap("https://o.remove.bg/downloads/4d6eaf13-25a1-4547-a21b-3f03be0a8a6b/korn-stone-logo-i2742-removebg-preview.png");
             moon.x = 1000;
             moon.y = -100;
-            moon.scaleX = 0.95;
-            moon.scaleY = 0.95;
+            moon.scaleX = 1.0;
+            moon.scaleY = 1.0;
             background.addChild(moon);
 
             for (var i = 0; i < 150; i++) {
@@ -65,9 +65,9 @@ var background = function (window) {
 
 
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap("https://o.remove.bg/downloads/48313df3-1788-4d93-bd22-d2fb6e946275/jonathan_davis-removebg-preview__1_-removebg-preview.png");
-            tree.x = 100;
-            tree.y = 100;
+            tree = draw.bitmap("https://o.remove.bg/downloads/56ec763e-73f0-49e4-b35f-082f25f209ff/jonathan_davis-removebg-preview.png");
+            tree.x = 0;
+            tree.y = 0;
             background.addChild(tree);
 
 
