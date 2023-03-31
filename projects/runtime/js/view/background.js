@@ -27,21 +27,22 @@ var background = function (window) {
 
         // ANIMATION VARIABLES HERE:
         var tree
+        var tree2
         var buildings = [] 
        // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
             background.removeAllChildren();
-
+            
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
             var backgroundFill = draw.rect(canvasWidth, canvasHeight = groundY, 'red');
             background.addChild(backgroundFill);
             // TODO: 3 - Add a moon and starfield
-            var moon = draw.bitmap("https://o.remove.bg/downloads/4d6eaf13-25a1-4547-a21b-3f03be0a8a6b/korn-stone-logo-i2742-removebg-preview.png");
+            var moon = draw.bitmap("img/korn.png");
             moon.x = 1000;
-            moon.y = -100;
+            moon.y = -80;
             moon.scaleX = 1.0;
             moon.scaleY = 1.0;
             background.addChild(moon);
@@ -54,22 +55,30 @@ var background = function (window) {
             }
 
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for (var i = 0; i < 5; ++i) {
-  var buildingHeight = 300;
-  var building = draw.rect(75, buildingHeight, "Black", "White", 1);
-  building.x = 200 * i;
-  building.y = groundY - buildingHeight;
-  background.addChild(building);
-  buildings.push(building);
+            for (var i = 0; i < 9; ++i) {
+            var buildingHeight = 300;
+            var building = draw.rect(75, buildingHeight, "Black", "White", 5);
+            building.x = 200 * i;
+             building.y = groundY - buildingHeight;
+            background.addChild(building);
+             buildings.push(building);
 }
 
 
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap("https://o.remove.bg/downloads/56ec763e-73f0-49e4-b35f-082f25f209ff/jonathan_davis-removebg-preview.png");
-            tree.x = 0;
+            tree = draw.bitmap("img/jonathan.png");
+            tree.x = 20;
             tree.y = 0;
+            tree.scalex = 0.1;
+            tree.scaley = 0.1;
             background.addChild(tree);
 
+            tree2 = draw.bitmap("img/jonathan.png");
+            tree2.x = 20;
+            tree2.y = 500;
+            tree2.scalex = 0.1;
+            tree2.scaley = 0.1;
+            background.addChild(tree2);
 
         } // end of render function - DO NOT DELETE
 
@@ -83,13 +92,19 @@ var background = function (window) {
             var groundY = ground.y;
 
             // TODO 4: Part 2 - Move the tree!
-            tree.x = tree.x + 1;
+            tree.x = tree.x + -5;
 
             if (tree.x < -200) {
                 tree.x = canvasWidth;
             }
             // TODO 5: Part 2 - Parallax
-
+            for (var i = 0; i < buildings.length; i++) {
+                var currentBuilding = buildings[i];
+                currentBuilding.x = currentBuilding.x - 1;
+                if (currentBuilding.x < -200) {
+                    currentBuilding.x = canvasWidth;
+                }
+            }
 
         } // end of update function - DO NOT DELETE
 
