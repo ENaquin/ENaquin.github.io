@@ -37,7 +37,7 @@ var level01 = function (window) {
             sawBladeHitZone.y = yvalue;
             game.addGameItem(sawBladeHitZone)
 
-            var obstacleImage = draw.bitmap("img/sawblade.png");
+            var obstacleImage = draw.bitmap("img/jp.png");
             sawBladeHitZone.addChild(obstacleImage);
         }
         createSawBlade(800, 325)
